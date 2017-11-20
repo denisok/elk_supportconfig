@@ -19,7 +19,7 @@ So far parses only basic supportconfig and syslog from `messages*.txt`. For othe
 
 ## TODO
 
-* create standard Index and upload it to elasticsearch before kibana starts
-* create standard Dashboards and add the to this repo, maybe also upload it to elasticsearch automatically
-* add missed filters for suportconfig plugins (Ceph and etc.)
+* create standard Index and upload it to the elasticsearch before kibana starts
+* create standard Dashboards and add it to this repo, maybe also upload it to the elasticsearch automatically
+* add missed filters for the suportconfig plugins (Ceph and etc.)
 * rework fields and indexes
