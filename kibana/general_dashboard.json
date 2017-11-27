@@ -1,0 +1,15 @@
+{
+  "_id": "general_dashboard",
+  "_type": "dashboard",
+  "title": "General",
+  "hits": 0,
+  "description": "",
+  "panelsJSON": "[{\"size_x\":4,\"size_y\":3,\"panelIndex\":1,\"type\":\"search\",\"id\":\"AV_aL4nme7tCuwiIZZ2n\",\"col\":1,\"row\":3,\"columns\":[\"host\",\"entry_out\"],\"sort\":[\"_score\",\"desc\"]},{\"size_x\":3,\"size_y\":3,\"panelIndex\":2,\"type\":\"search\",\"id\":\"AV_aLiuie7tCuwiIZZ0U\",\"col\":5,\"row\":3,\"columns\":[\"host\",\"entry_out\"],\"sort\":[\"_score\",\"desc\"]},{\"size_x\":7,\"size_y\":2,\"panelIndex\":3,\"type\":\"search\",\"id\":\"AV_aMBU0e7tCuwiIZZ3u\",\"col\":1,\"row\":1,\"columns\":[\"host\",\"entry_out\"],\"sort\":[\"_score\",\"desc\"]}]",
+  "optionsJSON": "{\"darkTheme\":false}",
+  "uiStateJSON": "{}",
+  "version": 1,
+  "timeRestore": false,
+  "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"match_all\":{}}}],\"highlightAll\":true,\"version\":true}"
+  }
+}

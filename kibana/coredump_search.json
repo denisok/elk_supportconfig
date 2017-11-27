@@ -1,0 +1,19 @@
+{
+    "_id": "AV_aLiuie7tCuwiIZZ0U",
+    "_type": "search",
+    "title": "Coredump",
+    "description": "",
+    "hits": 0,
+    "columns": [
+      "host",
+      "entry_out"
+    ],
+    "sort": [
+      "_score",
+      "desc"
+    ],
+    "version": 1,
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"index\":\"supportconfig_general\",\"highlightAll\":true,\"version\":true,\"query\":{\"query_string\":{\"query\":\"\\\"coredumpctl\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+    }
+}
