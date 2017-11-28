@@ -1,0 +1,25 @@
+{
+  "_index": ".kibana",
+  "_type": "search",
+  "_id": "ceph_entry_log",
+  "_version": 2,
+  "_score": 1,
+    "title": "ceph log entry",
+    "description": "",
+    "hits": 0,
+    "columns": [
+      "sp_host",
+      "thread",
+      "prio",
+      "subsys",
+      "msg"
+    ],
+    "sort": [
+      "_score",
+      "desc"
+    ],
+    "version": 1,
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"index\":\"cephlog-index\",\"highlightAll\":true,\"version\":true,\"query\":{\"match_all\":{}},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"name\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"cephlog-index\",\"key\":\"name\",\"negate\":true,\"type\":\"exists\",\"value\":\"exists\"}}]}"
+    }
+}

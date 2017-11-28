@@ -1,0 +1,28 @@
+{
+  "_index": ".kibana",
+  "_type": "search",
+  "_id": "ceph_log_entry",
+  "_version": 2,
+  "_score": 1,
+    "title": "ceph logentry",
+    "description": "",
+    "hits": 0,
+    "columns": [
+      "host",
+      "name",
+      "who_type",
+      "who_addr",
+      "seq",
+      "channel",
+      "prio",
+      "msg"
+    ],
+    "sort": [
+      "_score",
+      "desc"
+    ],
+    "version": 1,
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"index\":\"cephlog-index\",\"highlightAll\":true,\"version\":true,\"query\":{\"match_all\":{}},\"filter\":[{\"meta\":{\"index\":\"cephlog-index\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"exists\",\"key\":\"name\",\"value\":\"exists\"},\"exists\":{\"field\":\"name\"},\"$state\":{\"store\":\"appState\"}}]}"
+    }
+}
