@@ -53,16 +53,17 @@ services:
     networks: ['esnet']
     depends_on: ['elasticsearch']
 
-  # Run a short-lived container to set up Logstash.
-#  setup_logstash:
-#    image: centos:7
-#    volumes: ['./scripts/setup-logstash.sh:/usr/local/bin/setup-logstash.sh:ro']
+  # Run a short-lived container to set up the cluster.
+  setup_cluster:
+    image: centos:7
+    volumes: ['./scripts/setup.sh:/usr/local/bin/setup.sh:ro']
     # The script may have CR/LF line endings if using Docker for Windows, so
     # make sure that they don't confuse Bash.
-#    command: ['/bin/bash', '-c', 'cat /usr/local/bin/setup-logstash.sh | tr -d "\r" | bash']
-#    environment: ['ELASTIC_PASSWORD=${ELASTIC_PASSWORD}']
-#    networks: ['stack']
-#    depends_on: ['elasticsearch']
+    command: ['/bin/bash', '-c', 'cat /usr/local/bin/setup.sh | tr -d "\r" | bash']
+    env_file:
+      - .env
+    networks: ['esnet']
+    depends_on: ['elasticsearch']
 
 networks: {esnet: {}}
 
