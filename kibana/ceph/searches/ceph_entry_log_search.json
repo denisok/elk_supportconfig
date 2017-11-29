@@ -15,8 +15,8 @@
       "msg"
     ],
     "sort": [
-      "_score",
-      "desc"
+      "@timestamp",
+      "asc"
     ],
     "version": 1,
     "kibanaSavedObjectMeta": {

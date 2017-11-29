@@ -1,0 +1,30 @@
+{
+  "_index": ".kibana",
+  "_type": "search",
+  "_id": "AWAIA27ecMoBTcB_IdQL",
+  "_version": 1,
+  "_score": 1,
+    "title": "Ceph Health logs",
+    "description": "",
+    "hits": 0,
+    "columns": [
+      "host",
+      "prio",
+      "thread",
+      "subsys",
+      "name",
+      "who_type",
+      "who_addr",
+      "seq",
+      "channel",
+      "msg"
+    ],
+    "sort": [
+      "@timestamp",
+      "asc"
+    ],
+    "version": 1,
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"index\":\"cephlog-index\",\"highlightAll\":true,\"version\":true,\"query\":{\"query_string\":{\"query\":\"HEALTH_*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+    }
+}
