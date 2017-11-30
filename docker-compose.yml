@@ -39,8 +39,9 @@ services:
       - 'xpack.monitoring.elasticsearch.username=${ELASTIC_USER}'
       - 'xpack.monitoring.elasticsearch.password=${ELASTIC_PASSWORD}'
       - 'config.reload.automatic=true'
-    stdin_open: true
-    tty: true
+      - 'log.level=warn'
+    #stdin_open: true
+    #tty: true
     networks: ['esnet']
     depends_on: ['elasticsearch']
 
@@ -49,9 +50,12 @@ services:
     environment:
       - ELASTICSEARCH_USERNAME=elastic
       - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
+      #- XPACK_SECURITY_ENABLED=false
+      - LOGGING_QUIET=true
+      #- LOGGING_VERBOSE=true
     ports: ['5601:5601']
     networks: ['esnet']
-    depends_on: ['elasticsearch']
+    depends_on: ['logstash']
 
   # Run a short-lived container to set up the cluster.
   setup_cluster:
@@ -63,7 +67,7 @@ services:
     env_file:
       - .env
     networks: ['esnet']
-    depends_on: ['elasticsearch']
+    depends_on: ['kibana']
 
 networks: {esnet: {}}
 
