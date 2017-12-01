@@ -1,0 +1,8 @@
+{
+  "_id" : "config:6.0.0",
+  "type" : "config",
+  "config" : {
+    "defaultIndex" : "cephlog-index"
+  }
+}
+
