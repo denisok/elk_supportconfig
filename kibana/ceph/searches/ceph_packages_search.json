@@ -1,9 +1,7 @@
 {
-  "_index": ".kibana",
-  "_type": "search",
-  "_id": "ceph_packages",
-  "_version": 1,
-  "_score": 1,
+  "type": "search",
+  "_id": "search:ceph_packages",
+  "search": {
     "title": "Ceph packages",
     "description": "",
     "hits": 0,
@@ -20,4 +18,5 @@
     "kibanaSavedObjectMeta": {
       "searchSourceJSON": "{\"index\":\"supportconfig_general\",\"highlightAll\":false,\"version\":true,\"query\":{\"query_string\":{\"query\":\"ceph\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"supportconfig_general\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"sp_type\",\"value\":\"rpm\"},\"query\":{\"match\":{\"sp_type\":{\"query\":\"rpm\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"supportconfig_general\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"exists\",\"key\":\"pkg_ver\",\"value\":\"exists\"},\"exists\":{\"field\":\"pkg_ver\"},\"$state\":{\"store\":\"appState\"}}]}"
     }
+  }
 }

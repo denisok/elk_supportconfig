@@ -1,9 +1,7 @@
 {
-  "_index": ".kibana",
-  "_type": "dashboard",
-  "_id": "Ceph_Log_Entry",
-  "_version": 3,
-  "_score": 1,
+  "type": "dashboard",
+  "_id": "dashboard:Ceph_Log_Entry",
+  "dashboard": {
     "title": "Ceph LogEntry",
     "hits": 0,
     "description": "",
@@ -13,6 +11,7 @@
     "version": 1,
     "timeRestore": false,
     "kibanaSavedObjectMeta": {
-      "searchSourceJSON": "{\"filter\":[{\"query\":{\"match_all\":{}}}],\"highlightAll\":true,\"version\":true}"
+      "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
     }
+  }
 }

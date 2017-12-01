@@ -1,5 +1,5 @@
 ---
-version: '2'
+version: '2.1'
 services:
   # The environment variable "TAG" is used throughout this file to
   # specify the version of the images to run. The default is set in the
@@ -18,56 +18,50 @@ services:
   #   ELASTIC_VERSION=6.0.0-beta1 TAG=6.0.0-beta1-3eab5b40 docker-compose up
   #
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:${TAG}
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:${TAG}
     container_name: elasticsearch
     environment:
-      - 'http.host=0.0.0.0'
-      - 'transport.host=127.0.0.1'
       - 'ELASTIC_PASSWORD=${ELASTIC_PASSWORD}'
-      - 'xpack.security.enabled=false'
     ports: ['9200:9200']
     networks: ['esnet']
+    healthcheck:
+      test: curl -f -s http://elastic:${ELASTIC_PASSWORD}@elasticsearch:9200 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:${TAG}
+    image: docker.elastic.co/logstash/logstash-oss:${TAG}
     container_name: logstash
     volumes:
       - ./pipeline/:/usr/share/logstash/pipeline/
       - ./kibana/:/tmp/kibana/
       - ./logs/:/tmp/supportconfig/
     environment:
-      - 'xpack.monitoring.elasticsearch.username=${ELASTIC_USER}'
-      - 'xpack.monitoring.elasticsearch.password=${ELASTIC_PASSWORD}'
       - 'config.reload.automatic=true'
-      - 'log.level=warn'
-    #stdin_open: true
-    #tty: true
+    ports: ['9600:9600']
     networks: ['esnet']
-    depends_on: ['elasticsearch']
+    depends_on:
+      # we will update .kibana index, wait for it
+      kibana:
+        condition: service_healthy
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:${TAG}
+    image: docker.elastic.co/kibana/kibana-oss:${TAG}
+    container_name: kibana
     environment:
-      - ELASTICSEARCH_USERNAME=elastic
-      - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
-      #- XPACK_SECURITY_ENABLED=false
-      - LOGGING_QUIET=true
-      #- LOGGING_VERBOSE=true
+      - 'ELASTICSEARCH_USERNAME=${ELASTIC_USER}'
+      - 'ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}'
     ports: ['5601:5601']
     networks: ['esnet']
-    depends_on: ['logstash']
-
-  # Run a short-lived container to set up the cluster.
-  setup_cluster:
-    image: centos:7
-    volumes: ['./scripts/setup.sh:/usr/local/bin/setup.sh:ro']
-    # The script may have CR/LF line endings if using Docker for Windows, so
-    # make sure that they don't confuse Bash.
-    command: ['/bin/bash', '-c', 'cat /usr/local/bin/setup.sh | tr -d "\r" | bash']
-    env_file:
-      - .env
-    networks: ['esnet']
-    depends_on: ['kibana']
+    healthcheck:
+      test: curl -s -f -XGET http://localhost:5601/status -I || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
 
 networks: {esnet: {}}
 

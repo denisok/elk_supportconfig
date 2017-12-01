@@ -1,18 +1,17 @@
 {
-  "_index": ".kibana",
-  "_type": "dashboard",
-  "_id": "Ceph_Entry_Log",
-  "_version": 3,
-  "_score": 1,
+  "type": "dashboard",
+  "_id": "dashboard:Ceph_Entry_Log",
+  "dashboard": {
     "title": "Ceph Entry log",
     "hits": 0,
     "description": "",
-    "panelsJSON": "[{\"size_x\":12,\"size_y\":9,\"panelIndex\":1,\"type\":\"search\",\"id\":\"ceph_entry_log\",\"col\":1,\"row\":1,\"columns\":[\"sp_host\",\"thread\",\"prio\",\"subsys\",\"msg\"],\"sort\":[\"_score\",\"desc\"]}]",
+    "panelsJSON": "[{\"size_x\":12,\"size_y\":9,\"panelIndex\":1,\"type\":\"search\",\"id\":\"bdfac750-d6ab-11e7-a7fd-0529459a83ef\",\"col\":1,\"row\":1,\"columns\":[\"sp_host\",\"thread\",\"prio\",\"subsys\",\"msg\"],\"sort\":[\"_score\",\"desc\"]}]",
     "optionsJSON": "{\"darkTheme\":false}",
     "uiStateJSON": "{}",
     "version": 1,
     "timeRestore": false,
     "kibanaSavedObjectMeta": {
-      "searchSourceJSON": "{\"filter\":[{\"query\":{\"match_all\":{}}}],\"highlightAll\":true,\"version\":true}"
+      "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
     }
+  }
 }

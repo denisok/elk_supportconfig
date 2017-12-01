@@ -1,19 +1,21 @@
 {
-  "_id": "AV_aL4nme7tCuwiIZZ2n",
-  "_type": "search",
-  "title": "System",
-  "description": "",
-  "hits": 0,
-  "columns": [
-    "host",
-    "entry_out"
-  ],
-  "sort": [
-    "_score",
-    "desc"
-  ],
-  "version": 1,
-  "kibanaSavedObjectMeta": {
-    "searchSourceJSON": "{\"index\":\"supportconfig_general\",\"highlightAll\":true,\"version\":true,\"query\":{\"match_all\":{}},\"filter\":[{\"meta\":{\"index\":\"AV_aKke8e7tCuwiIZZs-\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"entry_type\",\"value\":\"System\"},\"query\":{\"match\":{\"entry_type\":{\"query\":\"System\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+  "_id": "search:System",
+  "type": "search",
+  "search": {
+    "title": "System",
+    "description": "",
+    "hits": 0,
+    "columns": [
+      "host",
+      "entry_out"
+    ],
+    "sort": [
+      "_score",
+      "desc"
+    ],
+    "version": 1,
+    "kibanaSavedObjectMeta": {
+    "searchSourceJSON": "{\"index\":\"supportconfig_general\",\"highlightAll\":true,\"version\":true,\"query\":{\"match_all\":{}},\"filter\":[{\"meta\":{\"index\":\"supportconfig_general\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"entry_type\",\"value\":\"System\"},\"query\":{\"match\":{\"entry_type\":{\"query\":\"System\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+    }
   }
 }

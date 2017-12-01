@@ -1,19 +1,21 @@
 {
-  "_id": "AV_aMBU0e7tCuwiIZZ3u",
-  "_type": "search",
-  "title": "uname",
-  "description": "",
-  "hits": 0,
-  "columns": [
-    "host",
-    "entry_out"
-  ],
-  "sort": [
-    "_score",
-    "desc"
-  ],
-  "version": 1,
-  "kibanaSavedObjectMeta": {
+  "_id": "search:uname-a",
+  "type": "search",
+  "search" : {
+    "title": "uname",
+    "description": "",
+    "hits": 0,
+    "columns": [
+      "host",
+      "entry_out"
+    ],
+    "sort": [
+      "_score",
+      "desc"
+    ],
+    "version": 1,
+    "kibanaSavedObjectMeta": {
     "searchSourceJSON": "{\"index\":\"supportconfig_general\",\"highlightAll\":true,\"version\":true,\"query\":{\"query_string\":{\"query\":\"\\\"uname -a\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+    }
   }
 }
