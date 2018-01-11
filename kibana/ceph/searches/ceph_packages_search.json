@@ -16,7 +16,7 @@
     ],
     "version": 1,
     "kibanaSavedObjectMeta": {
-      "searchSourceJSON": "{\"index\":\"supportconfig_general\",\"highlightAll\":false,\"version\":true,\"query\":{\"query_string\":{\"query\":\"ceph\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"supportconfig_general\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"sp_type\",\"value\":\"rpm\"},\"query\":{\"match\":{\"sp_type\":{\"query\":\"rpm\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"supportconfig_general\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"exists\",\"key\":\"pkg_ver\",\"value\":\"exists\"},\"exists\":{\"field\":\"pkg_ver\"},\"$state\":{\"store\":\"appState\"}}]}"
+      "searchSourceJSON": "{\"index\":\"supportconfig_general\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"pkg_name: ceph*\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"supportconfig_general\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"sp_type\",\"value\":\"rpm\",\"params\":{\"query\":\"rpm\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"sp_type\":{\"query\":\"rpm\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"supportconfig_general\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"exists\",\"key\":\"pkg_ver\",\"value\":\"exists\"},\"exists\":{\"field\":\"pkg_ver\"},\"$state\":{\"store\":\"appState\"}}]}"
     }
   }
 }
