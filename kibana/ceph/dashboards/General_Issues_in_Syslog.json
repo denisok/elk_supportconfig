@@ -1,0 +1,17 @@
+{
+  "type": "dashboard",
+  "_id": "dashboard:General_Issues_in_Syslog",
+  "dashboard": {
+    "title": "General Issues in Syslog",
+    "hits": 0,
+    "description": "",
+    "panelsJSON": "[{\"size_x\":12,\"size_y\":9,\"panelIndex\":1,\"type\":\"search\",\"id\":\"e0f07210-0698-11e8-89ad-c780ae3d0704\",\"col\":1,\"row\":1,\"columns\":[\"host\",\"program\",\"message\"],\"sort\":[\"@timestamp\",\"asc\"]}]",
+    "optionsJSON": "{\"darkTheme\":false}",
+    "uiStateJSON": "{}",
+    "version": 1,
+    "timeRestore": false,
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+    }
+  }
+}

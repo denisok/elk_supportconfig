@@ -1,0 +1,22 @@
+{
+  "_id": "search:e0f07210-0698-11e8-89ad-c780ae3d0704",
+  "type": "search",
+  "search": {
+    "title": "General Issues in Syslog",
+    "description": "",
+    "hits": 0,
+    "columns": [
+      "host",
+      "program",
+      "message"
+    ],
+    "sort": [
+      "@timestamp",
+      "asc"
+    ],
+    "version": 1,
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"index\":\"aab1fb20-dbf9-11e7-bb4b-550f74d226b2\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\\\"Failed to start Ceph\\\" OR SaltRenderError\"},\"filter\":[]}"
+    }
+  }
+}

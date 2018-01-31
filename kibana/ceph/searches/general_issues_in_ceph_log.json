@@ -1,0 +1,23 @@
+{
+  "_id": "search:30f67020-0699-11e8-89ad-c780ae3d0704",
+  "type": "search",
+  "search": {
+    "title": "General Issues in Ceph logs",
+    "description": "",
+    "hits": 0,
+    "columns": [
+      "host",
+      "thread",
+      "subsys",
+      "msg"
+    ],
+    "sort": [
+      "@timestamp",
+      "asc"
+    ],
+    "version": 1,
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"index\":\"cephlog-index\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\\\"ERROR: missing keyring\\\" OR \\\"client.rgw authentication error\\\"\"},\"filter\":[]}"
+    }
+  }
+}
