@@ -8,7 +8,7 @@
     "columns": [
       "host",
       "pkg_name",
-      "pkg_date"
+      "pkg_ver"
     ],
     "sort": [
       "host",
