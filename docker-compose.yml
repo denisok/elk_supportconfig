@@ -39,7 +39,9 @@ services:
       - ./logs/:/tmp/supportconfig/
     environment:
       - 'config.reload.automatic=true'
-    ports: ['9600:9600']
+    ports:
+      - '9600:9600'
+      - '12201:12201/udp'
     networks: ['esnet']
     depends_on:
       # we will update .kibana index, wait for it
@@ -63,5 +65,7 @@ services:
       elasticsearch:
         condition: service_healthy
 
-networks: {esnet: {}}
+networks:
+  esnet:
+    enable_ipv6: false
 
